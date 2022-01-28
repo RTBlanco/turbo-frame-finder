@@ -10,6 +10,7 @@
   "permissions": ["activeTab"],
   "content_scripts": [{
     "matches": ["http://localhost:3000/*"],
+    "js": ["main.js"],
     "css": ["main.css"]
   }]
 }
