@@ -2,6 +2,7 @@ turbo-frame {
   border: 1px red solid;
   display: block
 }
+
 turbo-frame::before {
   content: "Frame: #" attr(id);
   position: relative;
