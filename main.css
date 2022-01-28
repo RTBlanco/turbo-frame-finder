@@ -1,8 +1,4 @@
-/* html body {
-  background-color: pink;
-} */
-
-/* turbo-frame {
+turbo-frame {
   border: 1px red solid;
   display: block
 }
@@ -18,8 +14,4 @@ turbo-frame::before {
   background-color: white;
   padding: 4px;
   border: 1px red solid;
-} */
-
-div {
-  border: red 3px solid;
 }

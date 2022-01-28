@@ -9,7 +9,7 @@
   },
   "permissions": ["activeTab"],
   "content_scripts": [{
-    "matches": ["<all_urls>"],
+    "matches": ["http://127.0.0.1:3000/*"],
     "css": ["main.css"]
   }]
 }
