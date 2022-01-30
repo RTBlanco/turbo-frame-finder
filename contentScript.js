@@ -5,7 +5,7 @@ chrome.storage.sync.get('on', function(items) {
   const state = {on: items.on}
 
   
-  const frames = document.getElementsByTagName('div')
+  const frames = document.getElementsByTagName('div') //change to turbo-frames
   if (state.on) {
     for (let i = 0; i < frames.length; i ++) {
       frames[i].classList.add('turbo-frame-finder')
