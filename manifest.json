@@ -14,7 +14,7 @@
   "content_scripts": [{
     "matches": ["http://localhost:3000/*"],
     "run_at": "document_end",
-    "js": ["main.js"],
-    "css": ["main.css"]
+    "js": ["contentScript.js"],
+    "css": ["contentScript.css"]
   }]
 }

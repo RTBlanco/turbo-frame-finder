@@ -1,19 +1,18 @@
+const state = {
+  on: ''
+}
+
+const checked = checkStorage().then(data => {
+  state.on = data
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  
-  const state = {
-    on: checkStorage()
-  }
-  console.log(state.on)
   const toggleSwitch = document.getElementById('toggle-switch');
-
   toggleSwitch.checked = state.on
 
   
   toggleSwitch.addEventListener('change', () => {
     state.on = !state.on;
-    // localStorage.setItem('on', state.on)
-
     chrome.storage.sync.set({'on': state.on}, ()=> {
       console.log('Settings saved');
     });
@@ -21,19 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function checkStorage() {
-  // let storage = localStorage.getItem('on')
-
-  // if (typeof storage === 'undefined' || storage === 'false' ) {
-  //   return false
-  // } else {
-  //   return true
-  // }
-
-  chrome.storage.sync.get('on', function(items) {
-    console.log('Settings retrieved', items);
-    if (typeof items.on === 'undefined') {
-      return false
-    }  
-    return items.on
+  return new Promise((resolve, reject) => {
+    chrome.storage.sync.get('on', function(items) {
+      console.log('Settings retrieved', items);
+      resolve(items.on)
+    });
   });
 }
