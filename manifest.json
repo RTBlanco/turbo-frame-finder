@@ -7,9 +7,13 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab"],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
   "content_scripts": [{
     "matches": ["http://localhost:3000/*"],
+    "run_at": "document_end",
     "js": ["main.js"],
     "css": ["main.css"]
   }]
