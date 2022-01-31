@@ -20,7 +20,7 @@ header {
 }
 
 img {
-  width: 90px;
+  width: 60px;
 }
 
 footer {
@@ -52,7 +52,7 @@ footer {
 }
 
 .link, .fa {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 a:link,
